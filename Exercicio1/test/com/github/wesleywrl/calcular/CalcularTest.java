@@ -10,7 +10,7 @@ import org.junit.Test;
 
 /**
  *
- * @author NelsonWilliam
+ * @author wesley Ramos
  */
 public class CalcularTest {
 
