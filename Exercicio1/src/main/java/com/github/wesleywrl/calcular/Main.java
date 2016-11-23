@@ -16,7 +16,7 @@ public class Main {
             try {
                 System.out.println(Calcular.calcularOperacao(operacao));
                 System.exit(0);
-            }catch (IllegalArgumentException erro){
+            }catch (IllegalArgumentException error){
                 System.err.println("Expressao inválida");
                 System.exit(1);
                 

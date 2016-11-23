@@ -24,6 +24,6 @@ public class Calcular {
     public static double calcularOperacao(String operacao){
         Lexer calcular = new Lexer(operacao);
         Parser parser = new Parser(calcular.tokenize());
-        return (parser.operacao().valor());
+        return (parser.expressao().valor());
     }
 }
