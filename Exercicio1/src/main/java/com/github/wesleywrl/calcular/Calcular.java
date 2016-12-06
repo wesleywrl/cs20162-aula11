@@ -1,29 +1,35 @@
 /*
- * Copyright (c) 2016. Fabrica de Software - Instituto de Informatica (UFG)
+ * Copyright (c) 2016. Fábrica de Software - Instituto de Informática (UFG)
  * Creative Commons Attribution 4.0 International License.
  */
 package com.github.wesleywrl.calcular;
 
 import com.github.kyriosdata.parser.Lexer;
 import com.github.kyriosdata.parser.Parser;
-
+import com.github.kyriosdata.parser.Token;
+import java.util.List;
 
 /**
- *O Parser será utilizado para se obter o valor das expressões matemáticas;
- * @author Wesley Ramos
+ * Utiliza o Parser.
+ *
+ * @author Wesleywrl
  */
-public class Calcular {
+public final class Calcular {
+
     
+    private Calcular() {
+    }
+
     /**
-     * Retorna o valor de uma expressão matemática inserida em forma de string.
+     * Retorna o valor de uma expressão matemática inserida em  string.
      *
-     * @param operacao String com a expressão cujo valor deseja-se saber.
+     * @param expressao String com a expressão cujo valor deseja-se saber.
      * @return Valor resultante da expressão matemática inserida.
      */
-
-    public static double calcularOperacao(String operacao){
-        Lexer calcular = new Lexer(operacao);
-        Parser parser = new Parser(calcular.tokenize());
-        return (parser.expressao().valor());
+    public static float valorExpressao(final String expressao) {
+        List<Token> tokens = new Lexer(expressao).tokenize();
+        Parser parser = new Parser(tokens);
+        return parser.expressao().valor();
     }
+
 }

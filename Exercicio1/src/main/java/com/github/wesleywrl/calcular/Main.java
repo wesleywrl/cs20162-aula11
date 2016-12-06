@@ -1,29 +1,42 @@
 /*
- * Copyright (c) 2016. Fabrica de Software - Instituto de Informatica (UFG)
+ * Copyright (c) 2016. Fábrica de Software - Instituto de Informática (UFG)
  * Creative Commons Attribution 4.0 International License.
  */
 package com.github.wesleywrl.calcular;
 
 /**
- * Demonstra o resultado da expressão inserida;
- * @author Wesley Ramos
+ * Tenta imprimir o resultado da expressão matemática fornecida ao executar.
+ *
+ * @author Wesleywrl
  */
-public class Main {
-    public static void main(String args[]){
-        String operacao;
-        operacao = args[0];
-        if(args != null ){
+public final class Main {
+
+    private Main() {
+    }
+
+    /**
+     * Tenta imprimir o resultado da expressão matemática fornecida ao executar.
+     *
+     * @param args O primeiro elemento deve ser a expressão a ser calculada.
+     */
+    public static void main(final String[] args) {
+        String expressao;
+
+        //Verifica se não foi fornecido argumentos na execução do programa
+        if (args == null) {
+            System.err.println("Expressão não fornecida.");
+            System.exit(1);
+        } else {
+            expressao = args[0];
+            //Tenta imprimir o resultado da expressão fornecida
             try {
-                System.out.println(Calcular.calcularOperacao(operacao));
+                System.out.println(Calcular.valorExpressao(expressao));
                 System.exit(0);
-            }catch (IllegalArgumentException error){
-                System.err.println("Expressao inválida");
+            } catch (IllegalArgumentException iae) {
+                System.err.println("Expressão inválida.");
                 System.exit(1);
-                
             }
-        }else {
-            System.err.println("Expressão nula");
         }
     }
-    
+
 }
