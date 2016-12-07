@@ -11,6 +11,9 @@ package com.github.wesleywrl.calcular;
  */
 public final class Main {
 
+    /**
+     * Impede a instancialização desta classe.
+     */
     private Main() {
     }
 

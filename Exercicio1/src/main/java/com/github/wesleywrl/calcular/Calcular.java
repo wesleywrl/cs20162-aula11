@@ -10,18 +10,20 @@ import com.github.kyriosdata.parser.Token;
 import java.util.List;
 
 /**
- * Utiliza o Parser.
+ * Utiliza o Parser para obter o valor de expressões matemáticas.
  *
- * @author Wesleywrl
+ * @author wesleywrl
  */
 public final class Calcular {
 
-    
+    /**
+     * Impede instanciação dessa classe.
+     */
     private Calcular() {
     }
 
     /**
-     * Retorna o valor de uma expressão matemática inserida em  string.
+     * Retorna o valor de uma expressão matemática inserida em forma de string.
      *
      * @param expressao String com a expressão cujo valor deseja-se saber.
      * @return Valor resultante da expressão matemática inserida.
